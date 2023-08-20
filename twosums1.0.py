@@ -24,18 +24,27 @@
 # Input: nums = [3,3], target = 6
 # Output: [0,1]
 
-# import for type hinting 
+# import for type hinting
 from typing import List
+
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         hashMap = {}  # value : index
+        """ Key-Value pairs
 
-        for i, n in enumerate(nums):
-            diff = target - n
-            if diff in hashMap:
+            In our case the key will be the integers of the array
+            and the value will be the indices.
+            Why the integers as the keys ?
+            Because in Python checking for the existence of keys is much faster (O(1) average case)
+            than checking for the existence of the values (O(n) average case). The dictionnaries 
+            are optimized for key lookup
+        """
+        for i, n in enumerate(nums): # At each iteration, i will be the index of the number and n the number itself
+            diff = target - n # diff is the integer we are looking for
+            if diff in hashMap: # if diff is already in the hashMap, we return the index of the first number we found and this one
                 return [hashMap[diff], i]
-            hashMap[n] = i
+            hashMap[n] = i # we add the number n as the key to our hashmap with the i as it's value
         return
 
 

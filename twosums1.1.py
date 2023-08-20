@@ -11,4 +11,3 @@ class Solution:
                 return [hashMap[diff], i]
             hashMap[n] = i
         return
-    
