@@ -37,7 +37,7 @@ class Solution2:
 
 class Solution3:
     def containsDuplicate(self, nums):
-        hashset = set()
+        hashset = set() # A set doesn't allow duplicates so it's a better solution to find them
 
         for i in nums:
             if i in hashset:
